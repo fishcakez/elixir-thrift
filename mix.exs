@@ -57,7 +57,7 @@ defmodule Thrift.Mixfile do
 
   def application do
     [
-      applications: [:logger, :connection, :ranch],
+      applications: [:logger, :connection, :ranch, :mux, :acceptor_pool],
     ]
   end
 
@@ -73,6 +73,8 @@ defmodule Thrift.Mixfile do
       {:credo, "~> 0.7", only: [:dev, :test]},
       {:dialyxir, "~> 0.5", only: :dev, runtime: false},
       {:benchfella, "~> 0.3", only: [:dev, :test]},
+      {:mux, "~> 0.1", github: "fishcakez/elixir-mux", ref: "8be7164"},
+      {:acceptor_pool, "~> 1.0.0-rc.0"},
       {:connection, "~> 1.0"},
       {:ranch, "~> 1.3"},
      ]
